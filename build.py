@@ -18,7 +18,7 @@ name = 'pybuilder-bandit'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
 summary = 'Pybuilder plugin for bandit security linter'
 url = 'https://github.com/soda480/pybuilder-bandit'
-version = '0.1.0'
+version = '0.1.1'
 default_task = ['clean', 'analyze']
 license = 'Apache License, Version 2.0'
 description = summary
@@ -51,7 +51,7 @@ def set_properties(project):
         'Programming Language :: Python :: 3.6',
         'Topic :: Software Development :: Build Tools'])
     # only for functional testing plugin
-    # project.set_property('bandit_fail_build', True)
+    # project.set_property('bandit_break_build', True)
     # project.set_property('bandit_confidence_level', 'LOW')
     # project.set_property('bandit_severity_level', 'MEDIUM')
     # project.set_property('bandit_skip_ids', 'B311,B315')

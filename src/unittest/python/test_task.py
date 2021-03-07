@@ -30,7 +30,7 @@ class TestTask(unittest.TestCase):
     def test__init_bandit_Should_CallExpected_When_Called(self, *patches):
         project_mock = Mock()
         init_bandit(project_mock)
-        self.assertTrue(call('bandit_fail_build', False) in project_mock.set_property_if_unset.mock_calls)
+        self.assertTrue(call('bandit_break_build', False) in project_mock.set_property_if_unset.mock_calls)
         self.assertTrue(call('bandit_confidence_level', 'LOW') in project_mock.set_property_if_unset.mock_calls)
         self.assertTrue(call('bandit_severity_level', 'LOW') in project_mock.set_property_if_unset.mock_calls)
         self.assertTrue(call('bandit_skip_ids', None) in project_mock.set_property_if_unset.mock_calls)

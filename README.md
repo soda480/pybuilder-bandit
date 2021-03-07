@@ -9,7 +9,7 @@ A pybuilder plugin that analyzes your project for common security issues using `
 
 To add this plugin into your pybuilder project, add the following line near the top of your build.py:
 ```python
-use_plugin('pypi:pybuilder_bandit', '~=0.1.0')
+use_plugin('pypi:pybuilder_bandit', '~=0.1.1')
 ```
 
 **NOTE** version `v0.1.x` of this plugin will only work with version `v0.11.x` of Pybuilder.
@@ -20,7 +20,7 @@ The pybuilder task `pyb bandit` will use bandit to scan your project to find com
 
 Name | Type | Default Value | Description
 -- | -- | -- | --
-bandit_fail_build | bool | False | Fail build if scan detects any issues
+bandit_break_build | bool | False | Fail build if scan detects any issues
 bandit_confidence_level | str | LOW | Report only issues of a given confidence level or higher: LOW, MEDIUM, HIGH
 bandit_severity_level | str | LOW | report only issues of a given severity level or higher: LOW, MEDIUM, HIGH
 bandit_skip_ids | str | None | comma-separated list of test IDs to skip
@@ -28,7 +28,7 @@ bandit_skip_ids | str | None | comma-separated list of test IDs to skip
 The plugin properties are set using `project.set_property`, the following is an example of how to set the properties:
 
 ```Python
-project.set_property('bandit_fail_build', True)
+project.set_property('bandit_break_build', True)
 project.set_property('bandit_confidence_level', 'LOW')
 project.set_property('bandit_severity_level', 'MEDIUM')
 project.set_property('bandit_skip_ids', 'B110,B315')

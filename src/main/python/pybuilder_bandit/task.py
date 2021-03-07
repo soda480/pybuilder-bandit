@@ -11,7 +11,7 @@ from pybuilder.pluginhelper.external_command import ExternalCommandBuilder
 def init_bandit(project):
     """ initialize complexity task properties
     """
-    project.set_property_if_unset('bandit_fail_build', False)
+    project.set_property_if_unset('bandit_break_build', False)
     project.set_property_if_unset('bandit_confidence_level', 'LOW')
     project.set_property_if_unset('bandit_severity_level', 'LOW')
     project.set_property_if_unset('bandit_skip_ids', None)
@@ -58,7 +58,7 @@ def set_verbose_property(project):
 def translate_confidence_level(level):
     """ return confidence level
     """
-    if level == 'LOW':
+    if level is None or level == 'LOW':
         return '-i'
     if level == 'MEDIUM':
         return '-ii'
@@ -70,7 +70,7 @@ def translate_confidence_level(level):
 def translate_severity_level(level):
     """ return severity level
     """
-    if level == 'LOW':
+    if level is None or level == 'LOW':
         return '-l'
     if level == 'MEDIUM':
         return '-ll'
@@ -82,7 +82,7 @@ def translate_severity_level(level):
 def process_result(project, result, logger):
     """ process result
     """
-    fail_build = project.get_property('bandit_fail_build')
+    fail_build = project.get_property('bandit_break_build')
     if result.report_lines:
         message = f'Bandit security linter detected issues, see {result.report_file}'
         if fail_build:
