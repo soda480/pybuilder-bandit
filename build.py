@@ -16,7 +16,7 @@ use_plugin("python.distutils")
 
 name = 'pybuilder-bandit'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
-summary = 'Pybuilder plugin for radon'
+summary = 'Pybuilder plugin for bandit security linter'
 url = 'https://github.com/soda480/pybuilder-bandit'
 version = '0.1.0'
 default_task = ['clean', 'analyze']
