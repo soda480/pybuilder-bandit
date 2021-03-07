@@ -20,20 +20,20 @@ def init_bandit(project):
 
 @task('bandit', description='execute bandit security linter')
 @depends('prepare')
-def bandit(project, logger):
+def bandit(project, logger, reactor):
     """ execute bandit security linter
     """
     set_verbose_property(project)
-    command = get_command(project)
+    command = get_command(project, reactor)
     logger.info(f'Executing bandit security linter: \"{command.as_string}\"')
     result = command.run_on_production_source_files(logger, include_dirs_only=True)
     process_result(project, result, logger)
 
 
-def get_command(project):
+def get_command(project, reactor):
     """ return bandit command
     """
-    command = ExternalCommandBuilder('bandit', project)
+    command = ExternalCommandBuilder('bandit', project, reactor)
     command.use_argument('--recursive')
     command.use_argument('--format')
     command.use_argument('custom')

@@ -18,7 +18,7 @@ name = 'pybuilder-bandit'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
 summary = 'Pybuilder plugin for bandit security linter'
 url = 'https://github.com/soda480/pybuilder-bandit'
-version = '0.1.1'
+version = '0.2.0'
 default_task = ['clean', 'analyze']
 license = 'Apache License, Version 2.0'
 description = summary
@@ -54,4 +54,4 @@ def set_properties(project):
     # project.set_property('bandit_break_build', True)
     # project.set_property('bandit_confidence_level', 'LOW')
     # project.set_property('bandit_severity_level', 'MEDIUM')
-    # project.set_property('bandit_skip_ids', 'B311,B315')
+    # project.set_property('bandit_skip_ids', 'B311,B110')
