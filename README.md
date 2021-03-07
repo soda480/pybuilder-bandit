@@ -5,9 +5,9 @@
 
 # pybuilder-bandit #
 
-A pybuilder plugin that executes the `bandit` security linter on your project. Bandit is a tool designed to find common security issues in Python code, for more information refer to the [bandit pypi page](https://pypi.org/project/bandit/).
+A pybuilder plugin that analyzes your project for common security issues using `bandit`. Bandit is a security linter for Python code, for more information refer to the [bandit pypi page](https://pypi.org/project/bandit/).
 
-To add this plugin into your pybuilder project, add the following line at the top of your build.py:
+To add this plugin into your pybuilder project, add the following line near the top of your build.py:
 ```python
 use_plugin('pypi:pybuilder_bandit', '~=0.1.0')
 ```
