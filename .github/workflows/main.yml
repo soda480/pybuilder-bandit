@@ -27,7 +27,7 @@ jobs:
       run: |
         apk update
         apk add bash curl
-        sed -e 's,filename="mpcurses/,filename="src/main/python/mpcurses/,g' target/reports/coverage.xml > coverage.xml
+        sed -e 's,filename="pybuilder-bandit/,filename="src/main/python/pybuilder_bandit/,g' target/reports/coverage.xml > coverage.xml
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
