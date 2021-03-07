@@ -1,6 +1,6 @@
 [![GitHub Workflow Status](https://github.com/soda480/pybuilder-bandit/workflows/build/badge.svg)](https://github.com/soda480/pybuilder-bandit/actions)
 [![Code Coverage](https://codecov.io/gh/soda480/pybuilder-bandit/branch/main/graph/badge.svg)](https://codecov.io/gh/soda480/pybuilder-bandit)
-[![Code Grade](https://www.code-inspector.com/project/19887/status/svg)](https://frontend.code-inspector.com/project/19887/dashboard)
+[![Code Grade](https://www.code-inspector.com/project/19893/status/svg)](https://frontend.code-inspector.com/project/19893/dashboard)
 [![PyPI version](https://badge.fury.io/py/pybuilder-bandit.svg)](https://badge.fury.io/py/pybuilder-bandit)
 
 # pybuilder-bandit #
