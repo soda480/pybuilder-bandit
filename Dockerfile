@@ -8,6 +8,6 @@ WORKDIR /pybuilder-bandit
 COPY . /pybuilder-bandit/
 
 RUN apk --update --no-cache add gcc libc-dev libffi-dev openssl-dev
-RUN pip install pybuilder==0.11.17
+RUN pip install pybuilder
 RUN pyb install_dependencies
 RUN pyb install
