@@ -9,10 +9,13 @@ A pybuilder plugin that analyzes your project for common security issues using `
 
 To add this plugin into your pybuilder project, add the following line near the top of your build.py:
 ```python
-use_plugin('pypi:pybuilder_bandit', '~=0.1.1')
+use_plugin('pypi:pybuilder_bandit')
 ```
 
-**NOTE** version `v0.1.x` of this plugin will only work with version `v0.11.x` of Pybuilder.
+**NOTE** if you are using Pybuilder version `v0.11.x`, then specify the following version of the plugin:
+```python
+use_plugin('pypi:pybuilder_bandit', '~=0.1.1')
+```
 
 ### Pybuilder bandit properties ###
 

@@ -43,7 +43,7 @@ class TestTask(unittest.TestCase):
         get_command_patch.return_value = command_mock
         project_mock = Mock()
         logger_mock = Mock()
-        bandit(project_mock, logger_mock)
+        bandit(project_mock, logger_mock, Mock())
         process_result_patch.assert_called_once_with(project_mock, command_mock.run_on_production_source_files.return_value, logger_mock)
 
     @patch('pybuilder_bandit.task.translate_severity_level')
@@ -54,8 +54,9 @@ class TestTask(unittest.TestCase):
         external_command_builder_patch.return_value = command_mock
         project_mock = Mock()
         project_mock.get_property.return_value = 'id1,id2,id3'
-        result = get_command(project_mock)
-        external_command_builder_patch.assert_called_once_with('bandit', project_mock)
+        reactor_mock = Mock()
+        result = get_command(project_mock, reactor_mock)
+        external_command_builder_patch.assert_called_once_with('bandit', project_mock, reactor_mock)
         self.assertEqual(result, external_command_builder_patch.return_value)
         self.assertTrue(call('--skip') in command_mock.use_argument.mock_calls)
         self.assertTrue(call('id1,id2,id3') in command_mock.use_argument.mock_calls)
@@ -68,8 +69,9 @@ class TestTask(unittest.TestCase):
         external_command_builder_patch.return_value = command_mock
         project_mock = Mock()
         project_mock.get_property.return_value = None
-        result = get_command(project_mock)
-        external_command_builder_patch.assert_called_once_with('bandit', project_mock)
+        reactor_mock = Mock()
+        result = get_command(project_mock, reactor_mock)
+        external_command_builder_patch.assert_called_once_with('bandit', project_mock, reactor_mock)
         self.assertEqual(result, external_command_builder_patch.return_value)
         self.assertFalse(call('--skip') in command_mock.use_argument.mock_calls)
 
