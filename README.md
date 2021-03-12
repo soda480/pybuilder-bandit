@@ -9,10 +9,13 @@ A pybuilder plugin that analyzes your project for common security issues using `
 
 To add this plugin into your pybuilder project, add the following line near the top of your build.py:
 ```python
-use_plugin('pypi:pybuilder_bandit', '~=0.1.1')
+use_plugin('pypi:pybuilder_bandit')
 ```
 
-**NOTE** version `v0.1.x` of this plugin will only work with version `v0.11.x` of Pybuilder.
+**NOTE** if you are using Pybuilder version `v0.11.x`, then specify the following version of the plugin:
+```python
+use_plugin('pypi:pybuilder_bandit', '~=0.1.2')
+```
 
 ### Pybuilder bandit properties ###
 
@@ -24,6 +27,8 @@ bandit_break_build | bool | False | Fail build if scan detects any issues
 bandit_confidence_level | str | LOW | Report only issues of a given confidence level or higher: LOW, MEDIUM, HIGH
 bandit_severity_level | str | LOW | report only issues of a given severity level or higher: LOW, MEDIUM, HIGH
 bandit_skip_ids | str | None | comma-separated list of test IDs to skip
+bandit_include_testsources | bool | False | include scanning of project test sources
+bandit_include_scripts | bool | False | include scanning of project scripts
 
 The plugin properties are set using `project.set_property`, the following is an example of how to set the properties:
 
@@ -32,6 +37,8 @@ project.set_property('bandit_break_build', True)
 project.set_property('bandit_confidence_level', 'LOW')
 project.set_property('bandit_severity_level', 'MEDIUM')
 project.set_property('bandit_skip_ids', 'B110,B315')
+project.set_property('bandit_include_testsources', True)
+project.set_property('bandit_include_scripts', True)
 ```
 
 ### Development ###
