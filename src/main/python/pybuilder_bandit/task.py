@@ -46,11 +46,10 @@ def init_bandit(project):
 def bandit(project, logger, reactor):
     """ execute bandit security linter
     """
-    output_filename = project.expand_path('$dir_reports/bandit.json')
+    output_filename = project.expand_path('$dir_reports', 'bandit.json')
     include_test_sources = project.get_property('bandit_include_testsources')
     include_scripts = project.get_property('bandit_include_scripts')
     command = get_command(project, reactor, output_filename)
-    # logger.debug(f'Executing bandit security linter: \"{command.as_string}\"')
     result = command.run_on_production_source_files(
         logger,
         include_dirs_only=True,

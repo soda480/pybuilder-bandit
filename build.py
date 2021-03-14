@@ -8,7 +8,6 @@ from pybuilder.core import Author
 
 use_plugin("python.core")
 use_plugin("python.unittest")
-use_plugin('python.install_dependencies')
 use_plugin("python.flake8")
 use_plugin("python.coverage")
 use_plugin("python.distutils")
@@ -18,8 +17,8 @@ name = 'pybuilder-bandit'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
 summary = 'Pybuilder plugin for bandit security linter'
 url = 'https://github.com/soda480/pybuilder-bandit'
-version = '0.2.1'
-default_task = ['clean', 'analyze']
+version = '0.2.2'
+default_task = ['clean', 'publish']
 license = 'Apache License, Version 2.0'
 description = summary
 
