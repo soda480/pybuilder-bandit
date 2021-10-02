@@ -1,9 +1,9 @@
+# pybuilder-bandit #
 [![GitHub Workflow Status](https://github.com/soda480/pybuilder-bandit/workflows/build/badge.svg)](https://github.com/soda480/pybuilder-bandit/actions)
 [![Code Coverage](https://codecov.io/gh/soda480/pybuilder-bandit/branch/main/graph/badge.svg)](https://codecov.io/gh/soda480/pybuilder-bandit)
 [![Code Grade](https://www.code-inspector.com/project/19893/status/svg)](https://frontend.code-inspector.com/project/19893/dashboard)
 [![PyPI version](https://badge.fury.io/py/pybuilder-bandit.svg)](https://badge.fury.io/py/pybuilder-bandit)
-
-# pybuilder-bandit #
+[![python](https://img.shields.io/badge/python-3.9-teal)](https://www.python.org/downloads/)
 
 A pybuilder plugin that analyzes your project for common security issues using `bandit`. Bandit is a security linter for Python code, for more information refer to the [bandit pypi page](https://pypi.org/project/bandit/).
 
@@ -57,9 +57,9 @@ Run the Docker container:
 docker container run \
 --rm \
 -it \
--v $PWD:/pybuilder-bandit \
+-v $PWD:/code \
 pybbandit:latest \
-/bin/sh
+/bin/bash
 ```
 
 Execute the build:
