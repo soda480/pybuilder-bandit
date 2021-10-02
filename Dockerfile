@@ -1,10 +1,7 @@
-FROM python:3.6-slim
+FROM python:3.9-slim
 
 ENV PYTHONDONTWRITEBYTECODE 1
-
-WORKDIR /pybuilder-bandit
-
-COPY . /pybuilder-bandit/
-
+WORKDIR /code
+COPY . /code/
 RUN pip install pybuilder
 RUN pyb
