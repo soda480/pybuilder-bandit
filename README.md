@@ -1,9 +1,9 @@
-# pybuilder-bandit #
+# pybuilder-bandit
 [![GitHub Workflow Status](https://github.com/soda480/pybuilder-bandit/workflows/build/badge.svg)](https://github.com/soda480/pybuilder-bandit/actions)
 [![Code Coverage](https://codecov.io/gh/soda480/pybuilder-bandit/branch/main/graph/badge.svg)](https://codecov.io/gh/soda480/pybuilder-bandit)
 [![Code Grade](https://api.codiga.io/project/19893/status/svg)](https://app.codiga.io/public/project/19893/pybuilder-bandit/dashboard)
 [![PyPI version](https://badge.fury.io/py/pybuilder-bandit.svg)](https://badge.fury.io/py/pybuilder-bandit)
-[![python](https://img.shields.io/badge/python-3.9-teal)](https://www.python.org/downloads/)
+[![python](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-teal)](https://www.python.org/downloads/)
 
 A pybuilder plugin that analyzes your project for common security issues using `bandit`. Bandit is a security linter for Python code, for more information refer to the [bandit pypi page](https://pypi.org/project/bandit/).
 
@@ -17,7 +17,7 @@ use_plugin('pypi:pybuilder_bandit')
 use_plugin('pypi:pybuilder_bandit', '~=0.1.3')
 ```
 
-### Pybuilder bandit properties ###
+### Pybuilder bandit properties
 
 The pybuilder task `pyb bandit` will use bandit to scan your project to find common security issues, verbose mode will display to the screen any issues found. The following plugin properties are available to further configure the scan.
 
@@ -41,7 +41,7 @@ project.set_property('bandit_include_testsources', True)
 project.set_property('bandit_include_scripts', True)
 ```
 
-### Development ###
+### Development
 
 Clone the repository and ensure the latest version of Docker is installed on your development server.
 
@@ -59,7 +59,7 @@ docker container run \
 -it \
 -v $PWD:/code \
 pybbandit:latest \
-/bin/bash
+bash
 ```
 
 Execute the build:
