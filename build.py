@@ -11,16 +11,21 @@ use_plugin("python.unittest")
 use_plugin("python.flake8")
 use_plugin("python.coverage")
 use_plugin("python.distutils")
+use_plugin('pypi:pybuilder_radon')
+use_plugin('pypi:pybuilder_anybadge')
 
 
 name = 'pybuilder-bandit'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
 summary = 'Pybuilder plugin for bandit security linter'
 url = 'https://github.com/soda480/pybuilder-bandit'
-version = '0.3.0'
+version = '0.3.1'
 default_task = [
     'clean',
-    'publish'
+    'analyze',
+    'publish',
+    'radon',
+    'anybadge'
 ]
 license = 'Apache License, Version 2.0'
 description = summary
@@ -50,11 +55,12 @@ def set_properties(project):
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Topic :: Software Development :: Build Tools'])
+    project.set_property('anybadge_exclude', 'complexity, coverage')
     # only for functional testing plugin
     # project.set_property('bandit_break_build', True)
     # project.set_property('bandit_confidence_level', 'LOW')
