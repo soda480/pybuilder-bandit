@@ -1,7 +1,7 @@
 # pybuilder-bandit
 [![GitHub Workflow Status](https://github.com/soda480/pybuilder-bandit/workflows/build/badge.svg)](https://github.com/soda480/pybuilder-bandit/actions)
-[![Code Coverage](https://codecov.io/gh/soda480/pybuilder-bandit/branch/main/graph/badge.svg)](https://codecov.io/gh/soda480/pybuilder-bandit)
-[![Code Grade](https://api.codiga.io/project/19893/status/svg)](https://app.codiga.io/public/project/19893/pybuilder-bandit/dashboard)
+[![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://pybuilder.io/)
+[![complexity](https://img.shields.io/badge/complexity-A-brightgreen)](https://radon.readthedocs.io/en/latest/api.html#module-radon.complexity)
 [![PyPI version](https://badge.fury.io/py/pybuilder-bandit.svg)](https://badge.fury.io/py/pybuilder-bandit)
 [![python](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-teal)](https://www.python.org/downloads/)
 
@@ -48,8 +48,7 @@ Clone the repository and ensure the latest version of Docker is installed on you
 Build the Docker image:
 ```sh
 docker image build \
--t \
-pybbandit:latest .
+-t pybbandit:latest .
 ```
 
 Run the Docker container:
